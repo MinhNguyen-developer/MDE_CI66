@@ -211,3 +211,5 @@ var markdownParser = (function () {
     },
   };
 })();
+
+console.log("Hello Web");
