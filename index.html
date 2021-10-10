@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WriteDown Markdown Parser</title>
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section id="markdowneditor">
+      <span class="label">Markdown</span>
+
+      <textarea id="writearea" spellcheck="false"></textarea>
+    </section>
+
+    <section id="livepreview">
+      <span class="label">Live preview</span>
+
+      <div id="renderview"></div>
+    </section>
+  </body>
+
+  <script src="index.js"></script>
+
+  <script>
+    document.querySelector("#writearea").oninput = function () {
+      markdownParser.run();
+    };
+
+    var editor = document.querySelector("#writearea");
+
+    editor.value += "#Hello World-programmet";
+
+    editor.value +=
+      '\n\n###Java \n\n`public class HelloWorld \n{\n\tpublic static void main(String[] args) \n\t{\n\t\tSystem.out.println("Hello World");\n\t}\n}`';
+
+    editor.value +=
+      '\n\n###C++ \n\n`#include &lt;iostream&gt;\nint main(int argc, char** argv) \n{\n\tstd::cout << "Hello World" << std::endl;\n}`';
+
+    editor.value += '\n\n###Python \n\n`print "Hello World"`';
+
+    editor.value += '\n\n###JavaScript \n\n`console.log("Hello World");`';
+
+    editor.oninput.apply(editor);
+  </script>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function () {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "//www.google-analytics.com/analytics.js",
+      "ga"
+    );
+
+    ga("create", "UA-46156385-1", "cssscript.com");
+
+    ga("send", "pageview");
+  </script>
+</html>
